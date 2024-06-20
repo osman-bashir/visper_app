@@ -116,7 +116,7 @@ class InferencePipeline(torch.nn.Module):
 def build_pipeline ():
     with initialize(version_base=None, config_path="conf", job_name="test_app"):
         cfg = compose(config_name="config")
-    gpu = 0
+    gpu = 'cpu'
     torch.cuda.set_device(gpu)
     pipeline = InferencePipeline(cfg)
     pipeline.modelmodule.cuda(gpu)
