@@ -11,3 +11,5 @@ mediapipe
 ffmpeg-python
 streamlit
 tqdm
+sentencepiece
+pytorch-lightning
