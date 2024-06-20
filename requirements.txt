@@ -11,5 +11,4 @@ mediapipe
 ffmpeg-python
 streamlit
 tqdm
-subprocess
 time
