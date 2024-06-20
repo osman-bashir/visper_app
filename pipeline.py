@@ -3,15 +3,11 @@ import hydra
 import torch
 import torchaudio
 import torchvision
-from lightning_vsr import ModelModule, get_beam_search_decoder
+from lightning_vsr import ModelModule
 from datamodule.av_dataset import cut_or_pad
 from datamodule.transforms import AudioTransform, VideoTransform
-from WER.measures import get_wer as wer
-from WER.measures import get_cer as cer
 import numpy as np
 import torch.multiprocessing as mp
-import time, re
-from tqdm import tqdm
 from subprocess import CalledProcessError, run
 from hydra import compose, initialize
 
