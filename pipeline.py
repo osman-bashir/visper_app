@@ -21,7 +21,7 @@ class InferencePipeline(torch.nn.Module):
             self.video_transform = VideoTransform(subset="test")
 
         self.modelmodule = ModelModule(cfg)
-        self.modelmodule.cuda().eval()
+        self.modelmodule.eval()
 
 
     def forward(self, data_filename, lang):
@@ -45,7 +45,7 @@ class InferencePipeline(torch.nn.Module):
             video = self.load_video(data_filename)
             video = torch.tensor(video)
             video = video.permute((0, 3, 1, 2))
-            video = self.video_transform(video).cuda()
+            video = self.video_transform(video)
 
         if self.modality == "video":
             with torch.no_grad():
